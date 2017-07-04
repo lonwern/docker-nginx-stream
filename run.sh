@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+set -xmET
 [ -z "${REMOTE_SERVICE}" ] || [ -z "${EXPORTED_PORT}" ] && exit  1
 
 sed -i \
@@ -11,4 +11,4 @@ sed -i \
     /etc/nginx/nginx.conf
 
 nginx -t && \
-    exec nginx &
+    exec nginx -g "daemon off" &
