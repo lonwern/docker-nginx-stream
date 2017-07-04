@@ -11,4 +11,4 @@ sed -i \
     /etc/nginx/nginx.conf
 
 nginx -t && \
-    exec nginx -g "daemon off" &
+    exec nginx -g "daemon off;" &
