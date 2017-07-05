@@ -10,4 +10,5 @@ sed -i \
     "s/{{ EXPORTED_PORT }}/${EXPORTED_PORT}/g" \
     /etc/nginx/nginx.conf
 
-nginx -g "daemon off;"
+nginx -t && \
+	exec nginx -g "daemon off;"
